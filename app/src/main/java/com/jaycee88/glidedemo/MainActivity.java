@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.target.Target;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,11 +21,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void loadImage(View view) {
-        String url = "https://www.baidu.com/img/bd_logo1.png";
+//        String url = "https://www.baidu.com/img/bd_logo1.png";
+        String url = "http://cn.bing.com/az/hprichbg/rb/AvalancheCreek_ROW11173354624_1920x1080.jpg";
         Glide.with(this)
                 .load(url)
 //                .dontTransform()
-                .override(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
+//                .override(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
+//                .fitCenter()
+                .override(500, 500)
+                .centerCrop()
                 .into(imageView);
     }
 }
