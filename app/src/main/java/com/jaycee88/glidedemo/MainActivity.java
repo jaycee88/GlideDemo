@@ -28,8 +28,12 @@ public class MainActivity extends AppCompatActivity {
 //                .dontTransform()
 //                .override(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
 //                .fitCenter()
-                .override(500, 500)
-                .centerCrop()
+//                .override(500, 500)
+//                .centerCrop()
+                .transform(new CircleCrop(this)) // 切圆图
+//                .bitmapTransform(new BlurTransformation(this)) // 模糊效果
+//                .bitmapTransform(new GrayscaleTransformation(this)) // 黑白效果
+//                .bitmapTransform(new BlurTransformation(this), new GrayscaleTransformation(this)) // 模糊、黑白效果
                 .into(imageView);
     }
 }
